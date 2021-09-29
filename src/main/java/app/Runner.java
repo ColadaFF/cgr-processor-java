@@ -21,7 +21,7 @@ public class Runner {
         var path = System.getenv("PROGRAM_PATH");
         var limit = Optional.ofNullable(System.getenv("LIMIT"))
                 .map(Integer::parseInt)
-                .orElse(50);
+                .orElse(200);
 
         Flux.range(0, 5300)
                 .flatMap(page -> {
@@ -46,7 +46,7 @@ public class Runner {
                             )
                             .flatMap(response -> response.map(Mono::just)
                                     .orElse(Mono.empty()));
-                }, 20)
+                }, 32)
                 .subscribe(
                         System.out::println,
                         System.err::println,
