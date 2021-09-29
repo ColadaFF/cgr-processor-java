@@ -22,7 +22,7 @@ public class Runner {
         var limit = Optional.ofNullable(System.getenv("LIMIT"))
                 .map(Integer::parseInt)
                 .orElse(100);
-        
+
         Flux.range(0, 20)
                 .flatMap(page -> {
                     Configuration configuration = new Configuration(
