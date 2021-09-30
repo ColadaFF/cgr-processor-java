@@ -46,7 +46,7 @@ public class Runner {
                             )
                             .flatMap(response -> response.map(Mono::just)
                                     .orElse(Mono.empty()));
-                }, 64)
+                })
                 .subscribe(
                         System.out::println,
                         System.err::println,
