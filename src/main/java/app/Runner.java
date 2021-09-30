@@ -23,7 +23,7 @@ public class Runner {
                 .map(Integer::parseInt)
                 .orElse(25);
 
-        Flux.range(3220, 10600)
+        Flux.range(3100, 10600)
                 .flatMap(page -> {
                     Configuration configuration = new Configuration(
                             path,
